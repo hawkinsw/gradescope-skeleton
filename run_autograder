@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Gradescope will run this file which it expects to generate
+# a file named /autograder/results/results.json which it will
+# use to generate the output that the student sees.
+
+SUBMISSION_DIR=/autograder/submission
+
+# Copy the student's submissions to the source folder because,
+# really, that is where the action is.
+cp $SUBMISSION_DIR/pseudocode.txt /autograder/source/pseudocode.txt
+
+# CD to the source directory and then run the tests from there.
+# The effect is that we will have access to all the files from
+# the autograder.zip file during grading.
+cd /autograder/source
+
+# Finally, execute run_tests.py which will run the test_* functions
+# that it finds in the tests/test_*.py files.
+python3 run_tests.py > /autograder/results/results.json

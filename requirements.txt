@@ -1,0 +1,3 @@
+gradesucope>=1.5.0
+gradescope-utils>=0.2.6
+subprocess32
